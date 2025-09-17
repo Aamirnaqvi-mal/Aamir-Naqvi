@@ -27,7 +27,7 @@ export function useThrottledMouseTracking(isEnabled: boolean = true) {
           const baseY = (clientY / window.innerHeight - 0.7) * 0.2;
 
           // 👇 Add downward offset when moving horizontally
-          const horizontalDownBias = Math.abs(x) * 0.4; // always pushes down
+          const horizontalDownBias = Math.abs(x) * 0; // always pushes down
           // If you want right=down & left=up, replace with: const horizontalDownBias = x * 0.4;
 
           const y = baseY + horizontalDownBias;
