@@ -342,33 +342,6 @@ useEffect(() => {
             </div>
           </div>
 
-{/* 3x3 Grid of 16:9 Videos */}
-<div className="relative mb-20 z-30">
-  <h3 className="text-3xl md:text-4xl font-bosenAlt text-black/80 mb-8 text-center tracking-tight">
-    FEATURED WORK
-  </h3>
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-    {[
-        "https://dl.dropboxusercontent.com/scl/fi/qns6c92ug9h30rm2pq0ah/Outworking-everyone-isn-t-that-hard-v1.mp4?rlkey=10rwbqrmgm8g84baccdcq8zqy&e=2&st=tn3mr5x1&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/wxbrjspcn21e4v9jk3k4i/1.mp4?rlkey=ml7vvdqjbmpthuqjxm5d1dxkj&e=5&st=66ifnkek&dl=0",
-"https://dl.dropboxusercontent.com/scl/fi/e5igp36newl4kg60t30jo/Never-running-out-of-things-to-say-is-easy-actually-isn-t-that-hard-v1.mp4?rlkey=ibhvo5biqkxxtxnq87yz8kgre&st=t9jg3jz3&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/5bpaj1ghqqb2l09jh8fey/Crime-video.mp4?rlkey=gs8errfj4jzsgdm8f8apg221z&st=ok4a15jk&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/7bwo8dc89eeqmlsv655rs/2.mp4?rlkey=2ub1x9xdq75n1hhs6tbwckq84&st=b790pngi&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/7u0swmj6jsmzrx6ag8d4h/3.mp4?rlkey=6brz1jkth5kc9nkbarvoydono&st=dufyi669&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/vqp4h38st2i2etbu07bb4/Flirting-with-women-isn-t-that-hard-v1.mp4?rlkey=ayt6iz2khevwoerrpqtvg95iu&st=28jyhqon&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/xhsb2bbkj5qrawzfrju5x/4.mp4?rlkey=w7z93e20momg95hb7iysm2l4k&st=z5w5em4q&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/25vbrjp5hcedekdiy0vae/5.mp4?rlkey=v5ycvzmqlab3h6iald9nbtt53&st=ftb6c421&dl=0",
-    ].map((url, i) => (
-      <VideoThumbnail
-        key={i}
-        src={url}
-        title={`PROJECT ${String(i + 1).padStart(2, "0")}`}
-        isShowreel={false}
-        thumbnailIndex={i + 2} // Start from 2 since showreel uses 1
-      />
-    ))}
-  </div>
-</div>
 
 {/* 6x4 Grid of 9:16 Videos */}
 <div className="relative mb-20 z-30">
@@ -399,6 +372,33 @@ useEffect(() => {
       />
     ))}
   </div> 
+</div>
+{/* 3x3 Grid of 16:9 Videos */}
+<div className="relative mb-20 z-30">
+  <h3 className="text-3xl md:text-4xl font-bosenAlt text-black/80 mb-8 text-center tracking-tight">
+    FEATURED WORK
+  </h3>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+    {[
+        "https://dl.dropboxusercontent.com/scl/fi/qns6c92ug9h30rm2pq0ah/Outworking-everyone-isn-t-that-hard-v1.mp4?rlkey=10rwbqrmgm8g84baccdcq8zqy&e=2&st=tn3mr5x1&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/wxbrjspcn21e4v9jk3k4i/1.mp4?rlkey=ml7vvdqjbmpthuqjxm5d1dxkj&e=5&st=66ifnkek&dl=0",
+"https://dl.dropboxusercontent.com/scl/fi/e5igp36newl4kg60t30jo/Never-running-out-of-things-to-say-is-easy-actually-isn-t-that-hard-v1.mp4?rlkey=ibhvo5biqkxxtxnq87yz8kgre&st=t9jg3jz3&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/5bpaj1ghqqb2l09jh8fey/Crime-video.mp4?rlkey=gs8errfj4jzsgdm8f8apg221z&st=ok4a15jk&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/7bwo8dc89eeqmlsv655rs/2.mp4?rlkey=2ub1x9xdq75n1hhs6tbwckq84&st=b790pngi&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/7u0swmj6jsmzrx6ag8d4h/3.mp4?rlkey=6brz1jkth5kc9nkbarvoydono&st=dufyi669&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/vqp4h38st2i2etbu07bb4/Flirting-with-women-isn-t-that-hard-v1.mp4?rlkey=ayt6iz2khevwoerrpqtvg95iu&st=28jyhqon&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/xhsb2bbkj5qrawzfrju5x/4.mp4?rlkey=w7z93e20momg95hb7iysm2l4k&st=z5w5em4q&dl=0",
+      "https://dl.dropboxusercontent.com/scl/fi/25vbrjp5hcedekdiy0vae/5.mp4?rlkey=v5ycvzmqlab3h6iald9nbtt53&st=ftb6c421&dl=0",
+    ].map((url, i) => (
+      <VideoThumbnail
+        key={i}
+        src={url}
+        title={`PROJECT ${String(i + 1).padStart(2, "0")}`}
+        isShowreel={false}
+        thumbnailIndex={i + 2} // Start from 2 since showreel uses 1
+      />
+    ))}
+  </div>
 </div>
 
 
