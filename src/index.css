@@ -1,0 +1,499 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fade-in-delayed {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-delayed {
+    animation: fade-in-delayed 1.2s ease-out;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-shine {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shine 2.5s linear infinite;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+} 
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default margins and ensure full height */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Mobile viewport height custom property */
+:root {
+  --mobile-vh: 1vh;
+}
+
+/* Enable scrolling and prevent horizontal overflow */
+html {
+  overflow-x: hidden;
+  /* Only hide overflow-y on desktop, allow natural scrolling on mobile */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  /* Enable smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  height: auto;
+}
+
+/* Better text selection */
+::selection {
+  background: rgba(251, 191, 36, 0.3);
+  color: white;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse,
+  .animate-bounce-triangle,
+  .animate-fade-in-delayed,
+  .animate-shine-diagonal,
+  .animate-fade-up {
+    animation: none;
+  }
+  
+  .transition-all,
+  .transition-opacity,
+  .transition-colors {
+    transition: none;
+  }
+}
+
+/* Optimize video rendering */
+video {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Floating animation for random lines */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(90deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(180deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(270deg);
+  }
+}
+
+/* Texture overlay */
+.texture-overlay {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.15) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+.texture-overlay-light {
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(0,0,0,0.08) 1px, transparent 0);
+  background-size: 15px 15px;
+}
+
+.fixed-portrait {
+  position: fixed !important;
+  top: 50px; /* ya jo tumhe thik lage */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+@layer utilities {
+  .top-mobile-65 {
+    top: 65%;
+  }
+
+  @media (min-width: 768px) {
+    .top-desktop-20 {
+      top: 20%;
+    }
+  }
+
+  @keyframes gridMove {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 50px);
+    }
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+.ibm-font {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+@keyframes shine-diagonal {
+  0% {
+    background-position: -150% -150%;
+  }
+  100% {
+    background-position: 150% 150%;
+  }
+}
+.animate-shine-diagonal {
+  background-image: linear-gradient(60deg, transparent 40%, rgba(255, 255, 255, 0.7) 50%, transparent 60%);
+  background-size: 300% 300%;
+  background-repeat: no-repeat;
+  animation: shine-diagonal var(--shine-duration, 14s) ease-in-out infinite;
+  animation-delay: var(--shine-delay, 1s);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+
+@keyframes fade-up {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+/* Improved badge animations */
+@keyframes badge-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(1deg);
+  }
+}
+
+.animate-badge-float {
+  animation: badge-float 6s ease-in-out infinite;
+}
+.background-text {
+  will-change: transform;
+}
+
+/* Cinematic Effects */
+.vignette-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  /* Use dvh on mobile for better viewport handling */
+  height: 100vh;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.1) 70%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+@media (max-width: 767px) {
+  .vignette-effect {
+    height: 100dvh;
+    height: calc(var(--mobile-vh) * 100);
+  }
+}
+.edge-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  /* Use dvh on mobile for better viewport handling */
+  height: 100vh;
+  background: 
+    linear-gradient(to right, rgba(0,0,0,0.1) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.1) 100%),
+    linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.1) 100%);
+  backdrop-filter: blur(0px);
+}
+
+@media (max-width: 767px) {
+  .edge-blur {
+    height: 100dvh;
+    height: calc(var(--mobile-vh) * 100);
+  }
+}
+.chromatic-aberration {
+  position: relative;
+}
+
+.chromatic-aberration::before,
+.chromatic-aberration::after {
+  content: ''; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 70.03;
+  mix-blend-mode: screen;
+}
+
+.chromatic-aberration::before {
+  background: linear-gradient(45deg, 
+    transparent 0%, 
+    rgba(255, 0, 0, 0.1) 25%, 
+    transparent 50%, 
+    rgba(255, 0, 0, 0.1) 75%, 
+    transparent 100%
+  );
+  transform: translateX(1px);
+  animation: chromatic-red 8s ease-in-out infinite;
+}
+
+.chromatic-aberration::after {
+  background: linear-gradient(-45deg, 
+    transparent 0%, 
+    rgba(0, 100, 255, 0.1) 25%, 
+    transparent 50%, 
+    rgba(0, 100, 255, 0.1) 75%, 
+    transparent 100%
+  );
+  transform: translateX(-1px);
+  animation: chromatic-blue 6s ease-in-out infinite reverse;
+}
+
+@keyframes chromatic-red {
+  0%, 100% {
+    transform: translateX(1px) translateY(0px);
+    opacity: 0.02;
+  }
+  50% {
+    transform: translateX(2px) translateY(1px);
+    opacity: 0.05;
+  }
+}
+
+@keyframes chromatic-blue {
+  0%, 100% {
+    transform: translateX(-1px) translateY(0px);
+    opacity: 0.02;
+  }
+  50% {
+    transform: translateX(-2px) translateY(-1px);
+    opacity: 0.05;
+  }
+}
+
+/* Subtle film grain */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 998;
+  /* Use dvh on mobile for better viewport handling */
+  height: 100vh;
+  opacity: 0.02;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(0,0,0,0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 80px 80px, 120px 120px;
+  animation: grain-move 20s linear infinite;
+}
+
+@media (max-width: 767px) {
+  .film-grain {
+    height: 100dvh;
+    height: calc(var(--mobile-vh) * 100);
+  }
+}
+@keyframes grain-move {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-5px, -5px);
+  }
+  50% {
+    transform: translate(5px, 5px);
+  }
+  75% {
+    transform: translate(-3px, 3px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-image-layer {
+  animation-fill-mode: forwards;
+}
+
+/* Bouncing Arrow Animation */
+@keyframes bounce-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce-arrow {
+  animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+/* Desktop Image Hover Effects */
+.desktop-image {
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  cursor: pointer;
+}
+
+.desktop-image:hover {
+  transform: scale(1.02) translateZ(0);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.desktop-image img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
+}
+
+.desktop-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 3D Edge Shine Effect for Portfolio Section */
+@keyframes edge-shimmer {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.portfolio-edge-shine::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.9) 20%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.9) 80%,
+    transparent 100%
+  );
+  border-radius: 3rem 3rem 0 0;
+  z-index: 10;
+  animation: edge-shimmer 4s ease-in-out infinite;
+}
+
+.portfolio-edge-shine::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 20%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.6) 80%,
+    transparent 100%
+  );
+  border-radius: 0 0 3rem 3rem;
+  z-index: 10;
+  animation: edge-shimmer 4s ease-in-out infinite;
+  animation-delay: 2s;
+}

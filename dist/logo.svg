@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+	<defs>
+		<image  width="380" height="380" id="img1" href="data:image/png;base64,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"/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 297px;fill: #ffffff;font-weight: 400;font-family: "DMSerifText-Regular", "DM Serif Text" } 
+	</style>
+	<use id="Layer 1" href="#img1" x="10" y="10"/>
+	<text id="hi!" style="transform: matrix(1,0,0,1,34,302)" >
+		<tspan x="0" y="0" class="t0">h</tspan><tspan  y="0" class="t0">i</tspan><tspan  y="0" class="t0">!
+</tspan>
+	</text>
+</svg>
