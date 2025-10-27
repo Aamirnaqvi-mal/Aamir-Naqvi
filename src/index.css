@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes fade-in-delayed {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-delayed {
+    animation: fade-in-delayed 1.2s ease-out;
+  }
+
+
+} 
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default margins and ensure full height */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Mobile viewport height custom property */
+:root {
+  --mobile-vh: 1vh;
+}
+
+/* Enable scrolling and prevent horizontal overflow */
+html {
+  overflow-x: hidden;
+  /* Only hide overflow-y on desktop, allow natural scrolling on mobile */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  /* Enable smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+  height: auto;
+}
+
+/* Better text selection */
+::selection {
+  background: rgba(251, 191, 36, 0.3);
+  color: white;
+}
+
+/* Performance optimizations */
+.will-change-transform {
+  will-change: transform;
+}
+
+.will-change-opacity {
+  will-change: opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse,
+  .animate-bounce-triangle,
+  .animate-fade-in-delayed {
+    animation: none;
+  }
+
+  .transition-all,
+  .transition-opacity,
+  .transition-colors {
+    transition: none;
+  }
+}
+
+/* Optimize video rendering */
+video {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.ibm-font {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-image-layer {
+  animation-fill-mode: forwards;
+}
+
+/* Bouncing Arrow Animation */
+@keyframes bounce-arrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce-arrow {
+  animation: bounce-arrow 2s ease-in-out infinite;
+}
+
+/* Desktop Image Hover Effects */
+.desktop-image {
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+  cursor: pointer;
+}
+
+.desktop-image:hover {
+  transform: scale(1.02) translateZ(0);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.desktop-image img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
+}
+
+.desktop-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 3D Edge Shine Effect for Portfolio Section */
+@keyframes edge-shimmer {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.portfolio-edge-shine::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.9) 20%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.9) 80%,
+    transparent 100%
+  );
+  border-radius: 3rem 3rem 0 0;
+  z-index: 10;
+  animation: edge-shimmer 4s ease-in-out infinite;
+}
+
+.portfolio-edge-shine::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 20%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0.6) 80%,
+    transparent 100%
+  );
+  border-radius: 0 0 3rem 3rem;
+  z-index: 10;
+  animation: edge-shimmer 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
