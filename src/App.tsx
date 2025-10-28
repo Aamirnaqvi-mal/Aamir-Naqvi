@@ -35,7 +35,7 @@ const desktopImages = [
   { src: '/pc/3-4.webp', delay: 2.9 },
   { src: '/pc/1-2.webp', delay: 2.0, isStatic: true}, 
   { src: '/pc/7.webp', delay: 2.2, isStatic: true },
-  { src: '/pc/name.webp', delay: 3  }, 
+  { src: '/pc/name.webp', delay: 2.7  }, 
  
 ];
 
