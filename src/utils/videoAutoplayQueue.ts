@@ -1,7 +1,7 @@
 class VideoAutoplayQueue {
   private queue: Array<() => Promise<void>> = [];
   private isProcessing = false;
-  private delay = 300;
+  private delay = 100;
   private loadQueue: Array<() => Promise<void>> = [];
   private isLoadProcessing = false;
   private loadDelay = 100;
