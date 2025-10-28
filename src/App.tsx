@@ -29,13 +29,13 @@ const mobileImages = [
 ];
 
 const desktopImages = [ 
-  { src: '/pc/me.webp', delay: 1.2, isStatic: true },
-  { src: '/pc/me 2.webp', delay: 1.4, isStatic: true },
-  { src: '/pc/5-6.webp', delay: 2.2},
-  { src: '/pc/3-4.webp', delay: 1.9 },
-  { src: '/pc/1-2.webp', delay: 1.0, isStatic: true}, 
-  { src: '/pc/7.webp', delay: 1.2, isStatic: true },
-  { src: '/pc/name.webp', delay: 2  }, 
+  { src: '/pc/me.webp', delay: 2.2, isStatic: true },
+  { src: '/pc/me 2.webp', delay: 2.4, isStatic: true },
+  { src: '/pc/5-6.webp', delay: 3.2},
+  { src: '/pc/3-4.webp', delay: 2.9 },
+  { src: '/pc/1-2.webp', delay: 2.0, isStatic: true}, 
+  { src: '/pc/7.webp', delay: 2.2, isStatic: true },
+  { src: '/pc/name.webp', delay: 3  }, 
  
 ];
 
