@@ -358,15 +358,15 @@ useEffect(() => {
   </h3>
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
     {[
-        "https://dl.dropboxusercontent.com/scl/fi/xsv2zxz6odakh69e3q1ct/1.mp4?rlkey=61jrnscql6rbju526cvnpjf51&st=bkpoj80z&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/3fd1smvouk3d8rfj995o5/2.mp4?rlkey=z0xyl7kslydggo07cdtk3gbjd&st=dorbjief&dl=0",
-"https://dl.dropboxusercontent.com/scl/fi/ai4op96o3qq0n66un31vc/3.mp4?rlkey=jur8i18pdi0sxv6qfws109g4s&st=k6z3vkg6&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/ke7t8t51nshw3bdw4y92s/4.mp4?rlkey=uk3zmu5eh01txx05slb6mgu8t&st=6g4jvhmp&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/g053bs1mm9fcnt3ecudh5/5.mp4?rlkey=t5hajw5nifzxa4gokecnhcoa9&st=i80734tw&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/awobfzi0eq7ofsoy62854/6.mp4?rlkey=lir6aued5f53ma0yi4gv2hvud&st=d4gd05xo&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/5yq00dxk581hvp1xf2jcz/7.mp4?rlkey=nu9cplt1lh483itpo38yru8yi&st=536np4vi&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/fh0cyd8eilcl1e7x0aq3n/8.mp4?rlkey=jptcjwe2c0owtnavhdvp7jgjr&st=qmdgcimp&dl=0",
-      "https://dl.dropboxusercontent.com/scl/fi/8u4fc1mtblxo5m7l2nu8t/9.mp4?rlkey=df65sar8ds51bw3cf28ns152d&st=z206ud0z&dl=0",
+        "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/1.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/2.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/3.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/4.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/5.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/6.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/7.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/8.webm",
+  "https://cdn.jsdelivr.net/gh/Aamirnaqvi-mal/Videos@main/Portfolio/long/9.webm"
     ].map((url, i) => (
       <VideoThumbnail
         key={i}
