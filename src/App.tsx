@@ -315,7 +315,7 @@ useEffect(() => {
                 src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
                 title="SHOW REEL"
                 isShowreel={true}
-                thumbnailIndex={i + 11} 
+                thumbnailIndex={1} 
               />
             </div>
           </div>
