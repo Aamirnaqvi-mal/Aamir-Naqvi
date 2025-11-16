@@ -312,7 +312,7 @@ useEffect(() => {
             </h3>
             <div className="max-w-4xl mx-auto">
               <VideoThumbnail
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                src="https://i.ibb.co/fd1NS1n2/New-Project.webp"
                 title="SHOW REEL"
                 isShowreel={true}
                 thumbnailIndex={1} 
