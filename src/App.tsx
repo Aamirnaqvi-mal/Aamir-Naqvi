@@ -241,9 +241,7 @@ function App() {
 
           {/* Header */}
           <div className="text-center mb-20">
-            <p className="syne text-xs tracking-[0.35em] uppercase mb-4" style={{ color: 'var(--warm-gray)' }}>
-              Selected Work
-            </p>
+           
             <h2 className="syne text-black/90 mb-5 leading-none"
                 style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '0.04em' }}>
               PORTFOLIO
