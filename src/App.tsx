@@ -244,8 +244,8 @@ function App() {
             <p className="syne text-xs tracking-[0.35em] uppercase mb-4" style={{ color: 'var(--warm-gray)' }}>
               Selected Work
             </p>
-            <h2 className="syne font-bold text-black/90 mb-5 leading-none"
-                style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '-0.02em' }}>
+            <h2 className="syne text-black/90 mb-5 leading-none"
+                style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '0.04em' }}>
               PORTFOLIO
             </h2>
             <p className="ibm-font text-black/55 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
@@ -295,6 +295,27 @@ function App() {
             </div>
           </div>
 
+          {/* Social Content */}
+          <div className="mb-20">
+            <div className="section-rule">
+              <span className="syne text-xs font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
+                <span className="gold-dot" />
+                SOCIAL CONTENT
+              </span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
+              {socialVideos.map((url, i) => (
+                <VideoThumbnail
+                  key={i}
+                  src={url}
+                  title={`REEL ${String(i + 1).padStart(2, '0')}`}
+                  aspectRatio="vertical"
+                  thumbnailIndex={i + 11}
+                />
+              ))}
+            </div>
+          </div>
+
           {/* Featured Work */}
           <div className="mb-20">
             <div className="section-rule">
@@ -311,27 +332,6 @@ function App() {
                   title={`PROJECT ${String(i + 1).padStart(2, '0')}`}
                   isShowreel={false}
                   thumbnailIndex={i + 2}
-                />
-              ))}
-            </div>
-          </div>
-
-          {/* Social Content */}
-          <div className="mb-8">
-            <div className="section-rule">
-              <span className="syne text-xs font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
-                <span className="gold-dot" />
-                SOCIAL CONTENT
-              </span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
-              {socialVideos.map((url, i) => (
-                <VideoThumbnail
-                  key={i}
-                  src={url}
-                  title={`REEL ${String(i + 1).padStart(2, '0')}`}
-                  aspectRatio="vertical"
-                  thumbnailIndex={i + 11}
                 />
               ))}
             </div>
@@ -365,8 +365,8 @@ function App() {
             <p className="syne text-xs tracking-[0.35em] uppercase mb-5" style={{ color: 'rgba(201,168,76,0.7)' }}>
               Let's Work Together
             </p>
-            <h2 className="syne font-bold text-black/90 mb-3 leading-none"
-                style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)', letterSpacing: '-0.02em' }}>
+            <h2 className="syne text-black/90 mb-3 leading-none"
+                style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)', letterSpacing: '0.04em' }}>
               START A CONVERSATION
             </h2>
             <p className="ibm-font text-black/55 mb-10 text-base md:text-lg leading-relaxed">

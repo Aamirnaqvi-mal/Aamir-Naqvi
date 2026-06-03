@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        bosenAlt: ['Syne', 'sans-serif'],
-        syne: ['Syne', 'sans-serif'],
+        bosenAlt: ['Bebas Neue', 'sans-serif'],
+        syne: ['Bebas Neue', 'Bebas Neue Regular', 'sans-serif'],
         ibm: ['"IBM Plex Sans"', 'sans-serif'],
       },
       colors: {

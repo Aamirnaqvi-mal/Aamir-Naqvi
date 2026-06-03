@@ -46,7 +46,7 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
       <div className="relative flex flex-col items-center text-center px-8 max-w-lg w-full">
         {/* Name */}
         <div ref={logoRef} className="opacity-0 mb-6">
-          <div className="syne font-bold text-white mb-1"
+          <div className="syne text-white mb-1"
                style={{ fontSize: 'clamp(2.2rem, 6vw, 4rem)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
             AAMIR NAQVI
           </div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -54,7 +55,7 @@ body {
 
 video { transform: translateZ(0); -webkit-transform: translateZ(0); }
 
-.syne { font-family: 'Syne', sans-serif; }
+.syne { font-family: 'Bebas Neue', 'Bebas Neue Regular', sans-serif; letter-spacing: 0.04em; }
 .ibm-font { font-family: 'IBM Plex Sans', sans-serif; }
 
 /* === SPLASH SCREEN === */
