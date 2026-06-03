@@ -53,10 +53,10 @@ const featuredVideos = [
 ];
 
 const stats = [
-  { value: '5+', label: 'Years Experience' },
+  { value: '3+', label: 'Years Experience' },
   { value: '50+', label: 'Projects Delivered' },
   { value: '12', label: 'Social Formats' },
-  { value: '∞', label: 'Creative Ideas' },
+  { value: '20+', label: 'Happy Clients' },
 ];
 
 const skills = ['Motion Design', 'Brand Films', 'Social Content', 'Visual Identity', 'Art Direction', 'Storytelling'];
@@ -261,10 +261,10 @@ function App() {
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
             {stats.map((s, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl"
-                   style={{ background: 'rgba(0,0,0,0.04)', border: '1px solid rgba(0,0,0,0.07)' }}>
-                <div className="syne font-bold text-black/90 stat-number"
-                     style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', animationDelay: `${i * 0.1}s` }}>
+              <div key={i} className="text-center p-6 rounded-2xl stat-card"
+                   style={{ background: 'rgba(0,0,0,0.04)', border: '1px solid rgba(0,0,0,0.07)', animationDelay: `${i * 0.4}s` }}>
+                <div className="syne font-bold text-black/90 stat-number-pulse"
+                     style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', animationDelay: `${i * 0.4}s` }}>
                   {s.value}
                 </div>
                 <div className="ibm-font text-xs uppercase tracking-widest mt-1" style={{ color: 'var(--warm-gray)' }}>

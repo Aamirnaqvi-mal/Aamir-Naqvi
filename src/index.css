@@ -180,6 +180,29 @@ video { transform: translateZ(0); -webkit-transform: translateZ(0); }
 @keyframes count-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .stat-number { animation: count-up 0.6s ease-out both; }
 
+@keyframes stat-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
+@keyframes stat-glow {
+  0%, 100% { text-shadow: 0 0 0px transparent; }
+  50%       { text-shadow: 0 0 18px rgba(201,168,76,0.45); }
+}
+
+@keyframes stat-card-pulse {
+  0%, 100% { border-color: rgba(0,0,0,0.07); box-shadow: none; }
+  50%       { border-color: rgba(201,168,76,0.3); box-shadow: 0 0 20px rgba(201,168,76,0.08); }
+}
+
+.stat-card {
+  animation: stat-card-pulse 3.5s ease-in-out infinite;
+}
+
+.stat-number-pulse {
+  animation: stat-float 3.5s ease-in-out infinite, stat-glow 3.5s ease-in-out infinite;
+}
+
 /* === CONTACT SECTION === */
 .contact-link {
   display: flex; 
@@ -237,6 +260,8 @@ video { transform: translateZ(0); }
 @media (prefers-reduced-motion: reduce) {
   .bounce-arrow,
   .animate-fade-in-delayed,
-  .marquee-track { animation: none; }
+  .marquee-track,
+  .stat-card,
+  .stat-number-pulse { animation: none; }
   .transition-all, .transition-opacity, .transition-colors { transition: none; }
 }
