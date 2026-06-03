@@ -279,7 +279,7 @@ function App() {
           {/* Showreel */}
           <div className="mb-20">
             <div className="section-rule">
-              <span className="syne text-xs font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
+              <span className="syne text-xs font-semibold tracking-[0.25em] uppercase text-black/100 flex items-center gap-2">
                 <span className="gold-dot" />
                 SHOW REEL
               </span>
