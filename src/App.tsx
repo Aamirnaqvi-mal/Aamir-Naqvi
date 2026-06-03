@@ -344,7 +344,7 @@ function App() {
         </div>
       </div>
 
-     {/* Contact Section */}
+   {/* Contact Section */}
       {showContact && (
         <div
           id="contact-section"
