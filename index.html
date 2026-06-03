@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aamir Naqvi</title>
+
+    <!-- Preconnect to font origins for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Preload critical images only -->
+    <link rel="preload" as="image" href="/pc/bg.webp" media="(min-width: 768px)">
+    <link rel="preload" as="image" href="/mobile/mobile bg.webp" media="(max-width: 767px)">
+    <link rel="preload" as="image" href="/pc/me.webp" media="(min-width: 768px)">
+    <link rel="preload" as="image" href="/mobile/mbme.webp" media="(max-width: 767px)">
+
+    <!-- Critical CSS inline -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body, #root {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+
+    <!-- Load fonts asynchronously to prevent render blocking -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wdth@0,75;1,75&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wdth@0,75;1,75&display=swap" rel="stylesheet">
+    </noscript>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

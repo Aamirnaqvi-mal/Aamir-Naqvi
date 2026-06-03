@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --mobile-vh: 1vh;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --ink: #0e0e0e;
+  --cream: #f5f2ec;
+  --cream-dark: #ede9e0;
+  --warm-gray: #8a8070;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  height: auto;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: var(--ink);
+}
+
+::selection {
+  background: rgba(201, 168, 76, 0.35);
+  color: white;
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(201, 168, 76, 0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(201, 168, 76, 0.5); }
+
+video { transform: translateZ(0); -webkit-transform: translateZ(0); }
+
+.syne { font-family: 'Syne', sans-serif; }
+.ibm-font { font-family: 'IBM Plex Sans', sans-serif; }
+
+/* === SPLASH SCREEN === */
+.splash-noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* === HERO LAYERS === */
+.hero-image-layer {
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100vh); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-delayed {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 1.2s ease-out;
+}
+
+/* === BOUNCING ARROW === */
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+.bounce-arrow { animation: bounce-arrow 2.2s ease-in-out infinite; }
+
+/* === DESKTOP IMAGE HOVER === */
+.desktop-image {
+  transition: transform 0.35s ease-out, filter 0.35s ease-out;
+  cursor: default;
+}
+.desktop-image:hover {
+  transform: scale(1.015) translateZ(0);
+  filter: brightness(1.08);
+}
+.desktop-image img {
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: transform;
+}
+.desktop-image:hover img { transform: scale(1.04); }
+
+/* === PORTFOLIO PANEL === */
+.portfolio-panel {
+  background: var(--cream);
+  border-radius: 2.5rem 2.5rem 2.5rem 2.5rem;
+  position: relative;
+}
+
+.portfolio-panel::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(201,168,76,0.6) 30%, rgba(255,255,255,0.95) 50%, rgba(201,168,76,0.6) 70%, transparent 100%);
+  border-radius: 2.5rem 2.5rem 0 0;
+  z-index: 10;
+  animation: edge-shimmer 5s ease-in-out infinite;
+}
+
+@keyframes edge-shimmer {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* === SECTION TITLE RULE === */
+.section-rule {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.section-rule::before, .section-rule::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.12));
+}
+.section-rule::after {
+  background: linear-gradient(270deg, transparent, rgba(0,0,0,0.12));
+}
+
+/* === VIDEO CARD === */
+.video-card {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
+  background: #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+.video-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
+}
+
+/* === GOLD ACCENT === */
+.gold-dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* === STATS ROW === */
+@keyframes count-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.stat-number { animation: count-up 0.6s ease-out both; }
+
+/* === CONTACT SECTION === */
+.contact-link {
+  display: flex; 
+  align-items: center; 
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.25s ease;
+  padding: 0.75rem 1.25rem;
+  border-radius: 100px;
+  border: 1px solid transparent;
+}
+.contact-link:hover {
+  background: rgba(201,168,76,0.12);
+  border-color: rgba(201,168,76,0.35);
+  transform: translateX(4px);
+}
+
+/* === TAG PILLS === */
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+  background: rgba(0,0,0,0.06);
+  color: var(--warm-gray);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* === MARQUEE === */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  animation: marquee-left 28s linear infinite;
+  width: max-content;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-wrapper { overflow: hidden; }
+
+/* === WILL CHANGE === */
+.will-change-transform { will-change: transform; }
+.will-change-opacity   { will-change: opacity; }
+
+video { transform: translateZ(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .bounce-arrow,
+  .animate-fade-in-delayed,
+  .marquee-track { animation: none; }
+  .transition-all, .transition-opacity, .transition-colors { transition: none; }
+}
