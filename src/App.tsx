@@ -344,64 +344,76 @@ function App() {
         </div>
       </div>
 
-      {/* Contact Section */}
+     {/* Contact Section */}
       {showContact && (
         <div
           id="contact-section"
-          className="fixed bottom-0 left-0 right-0 overflow-hidden flex flex-col items-center justify-center z-30 opacity-0 animate-fade-in-delayed"
+          className={`fixed bottom-0 left-0 right-0 w-full overflow-hidden flex flex-col items-center justify-center z-30 bg-transparent opacity-0 animate-fade-in-delayed`}
           style={{
-            height: vh(100),
-            background: 'transparent',
-            animationDelay: '0.2s',
+            height: window.innerWidth < 768 ? 'calc(var(--mobile-vh) * 100)' : '100vh',
+            animationDelay: '0.2s', 
             animationFillMode: 'forwards',
-            pointerEvents: 'auto',
+            pointerEvents: 'auto'
           }}
-        >
-          {/* Decorative top line */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 opacity-30"
-               style={{ background: 'linear-gradient(to bottom, transparent, rgba(201,168,76,0.8))' }} />
+        > 
+         {/* Main Heading */}
+          <h2 className="text-5xl md:text-7xl font-bosenAlt text-[#181f22] text-center mb-0 tracking-wide">
+            LET'S START A CONVERSATION
+          </h2>
 
-          <div className="text-center px-6 max-w-2xl w-full">
-            <p className="syne text-xs tracking-[0.35em] uppercase mb-5" style={{ color: 'rgba(201,168,76,0.7)' }}>
-              Let's Work Together
-            </p>
-            <h2 className="syne text-black/90 mb-3 leading-none"
-                style={{ fontSize: 'clamp(2rem, 6vw, 4.5rem)', letterSpacing: '0.04em' }}>
-              START A CONVERSATION
-            </h2>
-            <p className="ibm-font text-black/55 mb-10 text-base md:text-lg leading-relaxed">
-              Got a brand story to tell? Let's make visuals that actually move people.
-            </p>
+         {/* Subheading */}
+<p className="text-[#181f22] text-1xl md:text-4xl lg:text-4xl ibm-font mb-8 text-center">
+  Drop me a message, let's make something users will love.
+</p>
 
-            <div className="flex flex-col items-center gap-3">
-              {/* Email */}
-              <a href="https://mail.google.com/mail/?view=cm&to=Aamirnaqvi03@gmail.com" target="_blank"
-                 rel="noopener noreferrer" className="contact-link">
-                <Mail size={18} style={{ color: 'var(--gold)' }} />
-                <span className="syne font-semibold text-sm tracking-wide">AAMIRNAQVI03@GMAIL.COM</span>
-                <ExternalLink size={13} className="text-black/30 ml-auto" />
+<div className="space-y-10 text-center">
+            {/* Email */}
+            <div className="flex flex-col items-center gap-2">
+              <Mail className="text-[#181f22] w-8 h-8" />
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=Aamirnaqvi03@gmail.com" target="_blank"
+                className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide hover:text-blue-500 transition-colors duration-200"
+              >
+                AAMIRNAQVI03@GMAIL.COM
               </a>
-
-              {/* WhatsApp */}
-              <a href="https://wa.link/uhhv7i" target="_blank" rel="noopener noreferrer" className="contact-link">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style={{ color: 'var(--gold)', flexShrink: 0 }}>
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-                <span className="syne font-semibold text-sm tracking-wide">WHATSAPP</span>
-                <ExternalLink size={13} className="text-black/30 ml-auto" />
-              </a>
-
-              {/* Instagram */}
-              <a href="https://www.instagram.com/aamir.naqvii/" target="_blank" rel="noopener noreferrer" className="contact-link">
-                <Instagram size={18} style={{ color: 'var(--gold)' }} />
-                <span className="syne font-semibold text-sm tracking-wide">@AAMIR.NAQVII</span>
-                <ExternalLink size={13} className="text-black/30 ml-auto" />
-              </a>
+              <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
+  Let's create something that actually works.
+</p>
             </div>
 
-            <p className="ibm-font text-xs mt-10" style={{ color: 'rgba(0,0,0,0.3)' }}>
-              © 2024 Aamir Naqvi · Visual Storyteller
-            </p>
+            {/* Whatsapp */}
+            <div className="flex flex-col items-center gap-0">
+              <svg className="text-[#181f22] w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              <a
+                href="https://wa.link/uhhv7i"
+                target="_blank"
+                rel="noopener noreferrer"
+  className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide hover:text-blue-500 transition-colors duration-200"
+              >
+                WHATSAPP
+              </a>
+              <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
+          Lets talk more further
+              </p>
+            </div>
+
+            {/* Instagram */}
+            <div className="flex flex-col items-center gap-2">
+              <Instagram className="text-[#181f22] w-8 h-8" />
+              <a
+                href="https://www.instagram.com/aamir.naqvii/"
+                target="_blank"
+                rel="noopener noreferrer"
+                  className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide hover:text-blue-500 transition-colors duration-200"
+              >
+                INSTAGRAM
+              </a>
+           <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
+                Tap in for visuals with purpose. - follow the flow.
+              </p>
+            </div>
           </div>
         </div>
       )}
