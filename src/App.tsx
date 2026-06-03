@@ -288,7 +288,7 @@ function App() {
                  style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.2)' }}>
               <VideoThumbnail
                 src="https://i.ibb.co/fd1NS1n2/New-Project.webp"
-                title="SHOW REEL 2024"
+                title="SHOW REEL 2026"
                 isShowreel={true}
                 thumbnailIndex={1}
               />
