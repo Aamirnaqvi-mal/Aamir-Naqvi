@@ -319,7 +319,7 @@ function App() {
           {/* Featured Work */}
           <div className="mb-20">
             <div className="section-rule">
-              <span className="syne text-s font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
+              <span className="syne text-m font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
                 <span className="gold-dot" />
                 FEATURED WORK
               </span>
