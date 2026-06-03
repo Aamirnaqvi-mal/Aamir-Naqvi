@@ -363,7 +363,7 @@ function App() {
 
          {/* Subheading */}
 <p className="text-[#181f22] text-1xl md:text-4xl lg:text-4xl ibm-font mb-8 text-center">
-  Drop me a message, let's make something users will love.
+  Drop me a message, let's cook something.
 </p>
 
 <div className="space-y-10 text-center">
