@@ -376,7 +376,9 @@ function App() {
               >
                 AAMIRNAQVI03@GMAIL.COM
               </a>
-        
+              <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
+  Let's create something that actually works.
+</p>
             </div>
 
             {/* Whatsapp */}
@@ -392,7 +394,9 @@ function App() {
               >
                 WHATSAPP
               </a>
-             
+              <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
+          Lets talk more further
+              </p>
             </div>
 
             {/* Instagram */}
@@ -406,7 +410,9 @@ function App() {
               >
                 INSTAGRAM
               </a>
-          
+           <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
+                Tap in for visuals with purpose. - follow the flow.
+              </p>
             </div>
           </div>
         </div>
