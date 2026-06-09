@@ -56,8 +56,8 @@ const featuredVideos = [
 const stats = [
   { value: '3+', label: 'Years Experience'},
   { value: '50+', label: 'Projects Delivered' },
-  { value: '12', label: 'Social Formats', href: },
-  { value: '20+', label: 'Happy Clients', href: },
+  { value: '12', label: 'Social Formats' },
+  { value: '20+', label: 'Happy Clients' },
 ];
 
 const skills = [
