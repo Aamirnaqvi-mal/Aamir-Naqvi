@@ -436,9 +436,9 @@ function App() {
             <p className="text-center ibm-font text-xs mt-12 pb-4" 
               All content is original work. Brands and clients belong to their respective owners.
             </p>
-          </ClickWrapper>
+ 
         </div>
-      </div>
+      
 
        {/* Contact Section */}
       {showContact && (
