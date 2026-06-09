@@ -259,7 +259,7 @@ function App() {
 
       {/* Scroll Arrow */}
       {showArrow && (
-     
+        <ClickWrapper
           className="fixed left-1/2 -translate-x-1/2 z-[90] bounce-arrow scroll-arrow-clickable"
           onClick={scrollToPortfolio}
           style={{ bottom: isMobile() ? '8vh' : '5vh' }}
@@ -275,11 +275,11 @@ function App() {
               boxShadow: '0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1)',
             }}
           >
-           
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>
- 
+        </ClickWrapper>
       )}
 
       {/* Portfolio Panel */}
