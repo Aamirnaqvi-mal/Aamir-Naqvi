@@ -298,7 +298,7 @@ function App() {
           {/* Header */}
           <div className="text-center mb-20">
             <ClickWrapper
-              href="https://www.instagram.com/aamir.naqvii/"
+            
               glowColor="rgba(201,168,76,0.4)"
             >
               <h2 className="syne text-black/90 mb-5 leading-none interactive-heading"
@@ -307,7 +307,7 @@ function App() {
               </h2>
             </ClickWrapper>
             <ClickWrapper
-              href="https://wa.link/uhhv7i"
+          
               glowColor="rgba(201,168,76,0.3)"
             >
               <p className="ibm-font text-black/55 max-w-2xl mx-auto text-base md:text-lg leading-relaxed interactive-text">
@@ -335,7 +335,7 @@ function App() {
             {stats.map((s, i) => (
               <ClickWrapper
                 key={i}
-                href={s.href}
+               
                 glowColor="rgba(201,168,76,0.4)"
                 className="stat-card glow-border"
                 style={{
