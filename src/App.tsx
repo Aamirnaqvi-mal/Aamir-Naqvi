@@ -54,10 +54,10 @@ const featuredVideos = [
 ];
 
 const stats = [
-  { value: '3+', label: 'Years Experience', href: 'https://www.instagram.com/aamir.naqvii/' },
-  { value: '50+', label: 'Projects Delivered', href: 'https://wa.link/uhhv7i' },
-  { value: '12', label: 'Social Formats', href: 'https://www.instagram.com/aamir.naqvii/' },
-  { value: '20+', label: 'Happy Clients', href: 'https://wa.link/uhhv7i' },
+  { value: '3+', label: 'Years Experience'},
+  { value: '50+', label: 'Projects Delivered' },
+  { value: '12', label: 'Social Formats', href: },
+  { value: '20+', label: 'Happy Clients', href: },
 ];
 
 const skills = [
