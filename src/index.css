@@ -428,8 +428,8 @@ video { transform: translateZ(0); }
   cursor: pointer;
 }
 .name-hover:hover {
-  transform: scale(1.015) translateZ(0);
-  filter: brightness(1.08) drop-shadow(0 0 20px rgba(201,168,76,0.3));
+  transform: scale(5.015) translateZ(0);
+ 
 }
 
 /* === MOBILE IMAGE === */
