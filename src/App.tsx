@@ -61,12 +61,12 @@ const stats = [
 ];
 
 const skills = [
-  { name: 'Motion Design', href: 'https://www.instagram.com/aamir.naqvii/' },
-  { name: 'Brand Films', href: 'https://www.instagram.com/aamir.naqvii/' },
-  { name: 'Social Content', href: 'https://wa.link/uhhv7i' },
-  { name: 'Visual Identity', href: 'https://www.instagram.com/aamir.naqvii/' },
-  { name: 'Art Direction', href: 'https://wa.link/uhhv7i' },
-  { name: 'Storytelling', href: 'https://www.instagram.com/aamir.naqvii/' },
+  { name: 'Motion Design'},
+  { name: 'Brand Films'},
+  { name: 'Social Content'},
+  { name: 'Visual Identity'},
+  { name: 'Art Direction'},
+  { name: 'Storytelling'},
 ];
 
 const contactLinks = [
