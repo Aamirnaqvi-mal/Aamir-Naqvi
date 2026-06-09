@@ -320,7 +320,7 @@ function App() {
               {skills.map((s) => (
                 <ClickWrapper
                   key={s.name}
-                  href={s.href}
+                
                   glowColor="rgba(201,168,76,0.3)"
                   className="tag-pill"
                 >
