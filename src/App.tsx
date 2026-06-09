@@ -34,7 +34,7 @@ const desktopImages = [
   { src: '/pc/3-4.webp',   delay: 2.9, noHover: false, scrollTo: '#portfolio' },
   { src: '/pc/1-2.webp',   delay: 2.0, isStatic: true,  noHover: false, scrollTo: '#portfolio' },
   { src: '/pc/7.webp',     delay: 2.2, isStatic: true,  noHover: false, },
-  { src: '/pc/name.webp',  delay: 2.7, isSmall: true, noHover: true, refresh: true },
+  { src: '/pc/name.webp',  delay: 2.7, isSmall: true, Hover: true, refresh: true },
 ];
 
 const socialVideos = Array.from({ length: 12 }, (_, i) =>
