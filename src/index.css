@@ -424,7 +424,7 @@ video { transform: translateZ(0); }
 
 /* === NAME IMAGE HOVER === */
 .name-hover {
-  transition: transform 0.35s ease-out, filter 0.35s ease-out, box-shadow 0.35s ease-out;
+  transition: transform 0.35s ease-out,
   cursor: pointer;
 }
 .name-hover:hover {
