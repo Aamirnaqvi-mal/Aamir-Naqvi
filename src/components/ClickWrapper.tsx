@@ -7,6 +7,7 @@ interface ClickWrapperProps {
   href?: string;
   onClick?: () => void;
   scrollTo?: string;
+  refresh?: boolean;
   ripple?: boolean;
   scale?: number;
   style?: React.CSSProperties;
@@ -20,6 +21,7 @@ export function ClickWrapper({
   href,
   onClick,
   scrollTo,
+  refresh,
   ripple = true,
   scale = 1.02,
   style = {},
@@ -51,7 +53,9 @@ export function ClickWrapper({
         setTimeout(() => rippleEl.remove(), 600);
       }
 
-      if (href) {
+      if (refresh) {
+        window.location.reload();
+      } else if (href) {
         window.open(href, '_blank');
       } else if (scrollTo) {
         const el = document.querySelector(scrollTo);
@@ -60,7 +64,7 @@ export function ClickWrapper({
         onClick();
       }
     },
-    [glowColor, href, onClick, scrollTo, ripple]
+    [glowColor, href, onClick, scrollTo, refresh, ripple]
   );
 
   return (

@@ -34,7 +34,7 @@ const desktopImages = [
   { src: '/pc/3-4.webp',   delay: 2.9, noHover: false, scrollTo: '#portfolio' },
   { src: '/pc/1-2.webp',   delay: 2.0, isStatic: true,  noHover: false, scrollTo: '#portfolio' },
   { src: '/pc/7.webp',     delay: 2.2, isStatic: true,  noHover: false, href: 'https://wa.link/uhhv7i' },
-  { src: '/pc/name.webp',  delay: 2.7, isSmall: true, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/pc/name.webp',  delay: 2.7, isSmall: true, refresh: true },
 ];
 
 const socialVideos = Array.from({ length: 12 }, (_, i) =>
@@ -217,7 +217,7 @@ function App() {
               scrollTo={img.scrollTo}
               glowColor="rgba(201,168,76,0.3)"
               noHover
-              className="desktop-image hero-image-layer fixed overflow-hidden"
+              className={`desktop-image hero-image-layer fixed overflow-hidden ${(img as any).isSmall ? 'name-hover' : ''}`}
               style={{
                 ...((img as any).isSmall
                   ? {
