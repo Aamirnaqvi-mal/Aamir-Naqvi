@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import VideoThumbnail from "./components/VideoThumbnail";
-import { Mail, Instagram, ExternalLink } from 'lucide-react';
+import { ClickWrapper } from "./components/ClickWrapper";
+import { Mail, Instagram } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplashScreen } from './components/SplashScreen';
@@ -17,23 +18,23 @@ function setMobileVH() {
 const isMobile = () => window.innerWidth < 768;
 
 const mobileImages = [
-  { src: '/mobile/mbname.webp',    delay: 2,   isStatic: false, zIndex: 16 },
-  { src: '/mobile/7.webp',         delay: 1.6, isStatic: false, zIndex: 15 },
-  { src: '/mobile/mb5-6.webp',     delay: 1.8, isStatic: false, zIndex: 14 },
-  { src: '/mobile/mb3-4.webp',     delay: 1.9, isStatic: false, zIndex: 13 },
-  { src: '/mobile/mb1-2.webp',     delay: 2.1, isStatic: false, zIndex: 12 },
-  { src: '/mobile/mbme.webp',      delay: 2.2, isStatic: false, zIndex: 11 },
-  { src: '/mobile/mobile bg.webp', isStatic: true,              zIndex: 10 },
+  { src: '/mobile/mbname.webp',    delay: 2,   isStatic: false, zIndex: 16, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/mobile/7.webp',         delay: 1.6, isStatic: false, zIndex: 15, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/mobile/mb5-6.webp',     delay: 1.8, isStatic: false, zIndex: 14, href: 'https://wa.link/uhhv7i' },
+  { src: '/mobile/mb3-4.webp',     delay: 1.9, isStatic: false, zIndex: 13, href: 'https://wa.link/uhhv7i' },
+  { src: '/mobile/mb1-2.webp',     delay: 2.1, isStatic: false, zIndex: 12, scrollTo: '#portfolio' },
+  { src: '/mobile/mbme.webp',      delay: 2.2, isStatic: false, zIndex: 11, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/mobile/mobile_bg.webp', isStatic: true,              zIndex: 10, scrollTo: '#portfolio' },
 ];
 
 const desktopImages = [
-  { src: '/pc/me.webp',    delay: 2.2, isStatic: true,  noHover: true },
-  { src: '/pc/me 2.webp',  delay: 2.4, isStatic: true,  noHover: true },
-  { src: '/pc/5-6.webp',   delay: 3.2, noHover: true },
-  { src: '/pc/3-4.webp',   delay: 2.9, noHover: true },
-  { src: '/pc/1-2.webp',   delay: 2.0, isStatic: true,  noHover: true },
-  { src: '/pc/7.webp',     delay: 2.2, isStatic: true,  noHover: true },
-  { src: '/pc/name.webp',  delay: 2.7, isSmall: true },
+  { src: '/pc/me.webp',    delay: 2.2, isStatic: true,  noHover: false, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/pc/me 2.webp',  delay: 2.4, isStatic: true,  noHover: false, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/pc/5-6.webp',   delay: 3.2, noHover: false, scrollTo: '#portfolio' },
+  { src: '/pc/3-4.webp',   delay: 2.9, noHover: false, scrollTo: '#portfolio' },
+  { src: '/pc/1-2.webp',   delay: 2.0, isStatic: true,  noHover: false, scrollTo: '#portfolio' },
+  { src: '/pc/7.webp',     delay: 2.2, isStatic: true,  noHover: false, href: 'https://wa.link/uhhv7i' },
+  { src: '/pc/name.webp',  delay: 2.7, isSmall: true, href: 'https://www.instagram.com/aamir.naqvii/' },
 ];
 
 const socialVideos = Array.from({ length: 12 }, (_, i) =>
@@ -53,13 +54,45 @@ const featuredVideos = [
 ];
 
 const stats = [
-  { value: '3+', label: 'Years Experience' },
-  { value: '50+', label: 'Projects Delivered' },
-  { value: '12', label: 'Social Formats' },
-  { value: '20+', label: 'Happy Clients' },
+  { value: '3+', label: 'Years Experience', href: 'https://www.instagram.com/aamir.naqvii/' },
+  { value: '50+', label: 'Projects Delivered', href: 'https://wa.link/uhhv7i' },
+  { value: '12', label: 'Social Formats', href: 'https://www.instagram.com/aamir.naqvii/' },
+  { value: '20+', label: 'Happy Clients', href: 'https://wa.link/uhhv7i' },
 ];
 
-const skills = ['Motion Design', 'Brand Films', 'Social Content', 'Visual Identity', 'Art Direction', 'Storytelling'];
+const skills = [
+  { name: 'Motion Design', href: 'https://www.instagram.com/aamir.naqvii/' },
+  { name: 'Brand Films', href: 'https://www.instagram.com/aamir.naqvii/' },
+  { name: 'Social Content', href: 'https://wa.link/uhhv7i' },
+  { name: 'Visual Identity', href: 'https://www.instagram.com/aamir.naqvii/' },
+  { name: 'Art Direction', href: 'https://wa.link/uhhv7i' },
+  { name: 'Storytelling', href: 'https://www.instagram.com/aamir.naqvii/' },
+];
+
+const contactLinks = [
+  {
+    icon: <Mail className="text-[#181f22] w-8 h-8 transition-all duration-300" />,
+    href: 'https://mail.google.com/mail/?view=cm&to=Aamirnaqvi03@gmail.com',
+    label: 'AAMIRNAQVI03@GMAIL.COM',
+    subtext: "Let's create something that actually works.",
+  },
+  {
+    icon: (
+      <svg className="text-[#181f22] w-8 h-8 transition-all duration-300" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    ),
+    href: 'https://wa.link/uhhv7i',
+    label: 'WHATSAPP',
+    subtext: "Let's talk more further",
+  },
+  {
+    icon: <Instagram className="text-[#181f22] w-8 h-8 transition-all duration-300" />,
+    href: 'https://www.instagram.com/aamir.naqvii/',
+    label: 'INSTAGRAM',
+    subtext: "Tap in for visuals with purpose. - follow the flow.",
+  },
+];
 
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -129,13 +162,27 @@ function App() {
 
   const vh = (n: number) => window.innerWidth < 768 ? `calc(var(--mobile-vh) * ${n})` : `${n}vh`;
 
+  const scrollToPortfolio = () => {
+    portfolioSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="relative">
-      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+      {showSplash && (
+        <ClickWrapper
+          className="splash-interactive"
+          onClick={() => setShowSplash(false)}
+          glowColor="rgba(201,168,76,0.4)"
+        >
+          <SplashScreen onComplete={() => setShowSplash(false)} />
+        </ClickWrapper>
+      )}
 
       {/* Fixed background */}
-      <div
-        className="fixed inset-0 z-0"
+      <ClickWrapper
+        className="fixed inset-0 z-0 bg-interactive"
+        scrollTo="#portfolio"
+        glowColor="rgba(255,255,255,0.15)"
         style={{
           backgroundImage: `url('/pc/bg.webp')`,
           backgroundAttachment: 'fixed',
@@ -144,7 +191,7 @@ function App() {
         }}
       >
         <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.08)' }} />
-      </div>
+      </ClickWrapper>
 
       {/* Hero Section */}
       <div
@@ -155,9 +202,11 @@ function App() {
         {/* Mobile layers */}
         <div className="md:hidden">
           {mobileImages.map((img, index) => (
-            <div
+            <ClickWrapper
               key={index}
-              ref={el => (mobileImagesRef.current[index] = el)}
+              href={img.href}
+              scrollTo={img.scrollTo}
+              glowColor="rgba(201,168,76,0.3)"
               className="mobile-image hero-image-layer fixed overflow-hidden"
               style={{
                 ...(img.isStatic
@@ -171,17 +220,19 @@ function App() {
               }}
             >
               <img src={img.src} alt="" className="w-full h-full object-cover" />
-            </div>
+            </ClickWrapper>
           ))}
         </div>
 
         {/* Desktop layers */}
         <div className="hidden md:block">
           {desktopImages.map((img, index) => (
-            <div
+            <ClickWrapper
               key={index}
-              ref={el => (desktopImagesRef.current[index] = el)}
-              className={`desktop-image hero-image-layer fixed overflow-hidden ${img.noHover ? 'pointer-events-none' : ''}`}
+              href={img.href}
+              scrollTo={img.scrollTo}
+              glowColor="rgba(201,168,76,0.3)"
+              className={`desktop-image hero-image-layer fixed overflow-hidden ${img.noHover ? '' : ''}`}
               style={{
                 ...((img as any).isSmall
                   ? {
@@ -198,16 +249,17 @@ function App() {
               }}
             >
               <img src={img.src} alt="" className={(img as any).isSmall ? 'w-full h-auto' : 'w-full h-full object-cover'} />
-            </div>
+            </ClickWrapper>
           ))}
         </div>
       </div>
 
       {/* Scroll Arrow */}
       {showArrow && (
-        <div
-          ref={arrowRef}
-          className="fixed left-1/2 -translate-x-1/2 z-[90] bounce-arrow"
+        <ClickWrapper
+          className="fixed left-1/2 -translate-x-1/2 z-[90] bounce-arrow scroll-arrow-clickable"
+          onClick={scrollToPortfolio}
+          glowColor="rgba(201,168,76,0.5)"
           style={{ bottom: isMobile() ? '8vh' : '5vh' }}
         >
           <div
@@ -225,12 +277,13 @@ function App() {
               <path d="M12 5v14M19 12l-7 7-7-7" />
             </svg>
           </div>
-        </div>
+        </ClickWrapper>
       )}
 
       {/* Portfolio Panel */}
       <div
         ref={portfolioSectionRef}
+        id="portfolio"
         className="relative w-full portfolio-panel z-[9999]"
         style={{
           minHeight: vh(100),
@@ -241,19 +294,35 @@ function App() {
 
           {/* Header */}
           <div className="text-center mb-20">
-           
-            <h2 className="syne text-black/90 mb-5 leading-none"
-                style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '0.04em' }}>
-              PORTFOLIO
-            </h2>
-            <p className="ibm-font text-black/55 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
-              Visual stories crafted to move people — from scroll-stopping reels to brand-defining films.
-            </p>
+            <ClickWrapper
+              href="https://www.instagram.com/aamir.naqvii/"
+              glowColor="rgba(201,168,76,0.4)"
+            >
+              <h2 className="syne text-black/90 mb-5 leading-none interactive-heading"
+                  style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '0.04em' }}>
+                PORTFOLIO
+              </h2>
+            </ClickWrapper>
+            <ClickWrapper
+              href="https://wa.link/uhhv7i"
+              glowColor="rgba(201,168,76,0.3)"
+            >
+              <p className="ibm-font text-black/55 max-w-2xl mx-auto text-base md:text-lg leading-relaxed interactive-text">
+                Visual stories crafted to move people — from scroll-stopping reels to brand-defining films.
+              </p>
+            </ClickWrapper>
 
             {/* Skill tags */}
             <div className="flex flex-wrap justify-center gap-2 mt-6">
-              {skills.map(s => (
-                <span key={s} className="tag-pill">{s}</span>
+              {skills.map((s) => (
+                <ClickWrapper
+                  key={s.name}
+                  href={s.href}
+                  glowColor="rgba(201,168,76,0.3)"
+                  className="tag-pill"
+                >
+                  {s.name}
+                </ClickWrapper>
               ))}
             </div>
           </div>
@@ -261,8 +330,20 @@ function App() {
           {/* Stats row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
             {stats.map((s, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl stat-card"
-                   style={{ background: 'rgba(0,0,0,0.04)', border: '1px solid rgba(0,0,0,0.07)', animationDelay: `${i * 0.4}s` }}>
+              <ClickWrapper
+                key={i}
+                href={s.href}
+                glowColor="rgba(201,168,76,0.4)"
+                className="stat-card glow-border"
+                style={{
+                  background: 'rgba(0,0,0,0.04)',
+                  border: '1px solid rgba(0,0,0,0.07)',
+                  animationDelay: `${i * 0.4}s`,
+                  borderRadius: '1rem',
+                  padding: '1.5rem',
+                  textAlign: 'center',
+                }}
+              >
                 <div className="syne font-bold text-black/90 stat-number-pulse"
                      style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', animationDelay: `${i * 0.4}s` }}>
                   {s.value}
@@ -270,19 +351,23 @@ function App() {
                 <div className="ibm-font text-xs uppercase tracking-widest mt-1" style={{ color: 'var(--warm-gray)' }}>
                   {s.label}
                 </div>
-              </div>
+              </ClickWrapper>
             ))}
           </div>
 
           {/* Showreel */}
           <div className="mb-20">
-            <div className="section-rule">
-              <span className="syne text-s font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
+            <ClickWrapper
+              scrollTo="#showreel"
+              glowColor="rgba(201,168,76,0.3)"
+              className="section-rule section-rule-interactive"
+            >
+              <span className="syne text-sm font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
                 <span className="gold-dot" />
                 SHOW REEL
               </span>
-            </div>
-            <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden"
+            </ClickWrapper>
+            <div id="showreel" className="max-w-5xl mx-auto rounded-2xl overflow-hidden"
                  style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.2)' }}>
               <VideoThumbnail
                 src="https://i.ibb.co/fd1NS1n2/New-Project.webp"
@@ -295,13 +380,17 @@ function App() {
 
           {/* Social Content */}
           <div className="mb-20">
-            <div className="section-rule">
-              <span className="syne text-m font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
+            <ClickWrapper
+              scrollTo="#social"
+              glowColor="rgba(201,168,76,0.3)"
+              className="section-rule section-rule-interactive"
+            >
+              <span className="syne text-sm font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
                 <span className="gold-dot" />
                 SOCIAL CONTENT
               </span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
+            </ClickWrapper>
+            <div id="social" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
               {socialVideos.map((url, i) => (
                 <VideoThumbnail
                   key={i}
@@ -316,13 +405,17 @@ function App() {
 
           {/* Featured Work */}
           <div className="mb-20">
-            <div className="section-rule">
-              <span className="syne text-m font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
+            <ClickWrapper
+              scrollTo="#featured"
+              glowColor="rgba(201,168,76,0.3)"
+              className="section-rule section-rule-interactive"
+            >
+              <span className="syne text-sm font-semibold tracking-[0.25em] uppercase text-black/40 flex items-center gap-2">
                 <span className="gold-dot" />
                 FEATURED WORK
               </span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            </ClickWrapper>
+            <div id="featured" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {featuredVideos.map((url, i) => (
                 <VideoThumbnail
                   key={i}
@@ -336,82 +429,75 @@ function App() {
           </div>
 
           {/* Bottom disclaimer */}
-          <p className="text-center ibm-font text-xs mt-12 pb-4" style={{ color: 'var(--warm-gray)' }}>
-            All content is original work. Brands and clients belong to their respective owners.
-          </p>
+          <ClickWrapper
+            href="https://www.instagram.com/aamir.naqvii/"
+            glowColor="rgba(201,168,76,0.2)"
+            className="interactive-disclaimer"
+          >
+            <p className="text-center ibm-font text-xs mt-12 pb-4" style={{ color: 'var(--warm-gray)' }}>
+              All content is original work. Brands and clients belong to their respective owners.
+            </p>
+          </ClickWrapper>
         </div>
       </div>
 
-   {/* Contact Section */}
+      {/* Contact Section */}
       {showContact && (
         <div
           id="contact-section"
-          className={`fixed bottom-0 left-0 right-0 w-full overflow-hidden flex flex-col items-center justify-center z-30 bg-transparent opacity-0 animate-fade-in-delayed`}
+          className="fixed bottom-0 left-0 right-0 w-full overflow-hidden flex flex-col items-center justify-center z-30 bg-transparent opacity-0 animate-fade-in-delayed"
           style={{
             height: window.innerWidth < 768 ? 'calc(var(--mobile-vh) * 100)' : '100vh',
-            animationDelay: '0.2s', 
+            animationDelay: '0.2s',
             animationFillMode: 'forwards',
             pointerEvents: 'auto'
           }}
-        > 
-         {/* Main Heading */}
-          <h2 className="text-5xl md:text-7xl font-bosenAlt text-[#181f22] text-center mb-0 tracking-wide">
-            LET'S START A CONVERSATION
-          </h2>
+        >
+          {/* Main Heading */}
+          <ClickWrapper
+            href="https://wa.link/uhhv7i"
+            glowColor="rgba(201,168,76,0.4)"
+            className="mb-2"
+          >
+            <h2 className="text-5xl md:text-7xl font-bosenAlt text-[#181f22] text-center tracking-wide interactive-heading">
+              LET'S START A CONVERSATION
+            </h2>
+          </ClickWrapper>
 
-         {/* Subheading */}
-<p className="text-[#181f22] text-1xl md:text-4xl lg:text-4xl ibm-font mb-8 text-center">
-  Drop me a message, let's make something users will love.
-</p>
+          {/* Subheading */}
+          <ClickWrapper
+            href="https://mail.google.com/mail/?view=cm&to=Aamirnaqvi03@gmail.com"
+            glowColor="rgba(201,168,76,0.3)"
+            className="mb-8"
+          >
+            <p className="text-[#181f22] text-xl md:text-4xl lg:text-4xl ibm-font text-center interactive-text">
+              Drop me a message, let's make something users will love.
+            </p>
+          </ClickWrapper>
 
-<div className="space-y-10 text-center">
-            {/* Email */}
-            <div className="flex flex-col items-center gap-2">
-              <Mail className="text-[#181f22] w-8 h-8" />
-              <a
-                href="https://mail.google.com/mail/?view=cm&to=Aamirnaqvi03@gmail.com" target="_blank"
-                className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide hover:text-blue-500 transition-colors duration-200"
+          <div className="space-y-10 text-center">
+            {contactLinks.map((link, i) => (
+              <ClickWrapper
+                key={i}
+                href={link.href}
+                glowColor="rgba(201,168,76,0.35)"
+                className="contact-item flex flex-col items-center gap-2"
               >
-                AAMIRNAQVI03@GMAIL.COM
-              </a>
-              <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
-  Let's create something that actually works.
-</p>
-            </div>
-
-            {/* Whatsapp */}
-            <div className="flex flex-col items-center gap-0">
-              <svg className="text-[#181f22] w-8 h-8" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              <a
-                href="https://wa.link/uhhv7i"
-                target="_blank"
-                rel="noopener noreferrer"
-  className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide hover:text-blue-500 transition-colors duration-200"
-              >
-                WHATSAPP
-              </a>
-              <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
-          Lets talk more further
-              </p>
-            </div>
-
-            {/* Instagram */}
-            <div className="flex flex-col items-center gap-2">
-              <Instagram className="text-[#181f22] w-8 h-8" />
-              <a
-                href="https://www.instagram.com/aamir.naqvii/"
-                target="_blank"
-                rel="noopener noreferrer"
-                  className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide hover:text-blue-500 transition-colors duration-200"
-              >
-                INSTAGRAM
-              </a>
-           <p className="text-[#181f22] text-xl md:text-1xl lg:text-2xl ibm-font mb-0 text-center">
-                Tap in for visuals with purpose. - follow the flow.
-              </p>
-            </div>
+                <div className="interactive-icon">{link.icon}</div>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#181f22] font-bosenAlt text-xl md:text-xl lg:text-2xl tracking-wide transition-colors duration-200"
+                  onClick={(e) => e.preventDefault()}
+                >
+                  {link.label}
+                </a>
+                <p className="text-[#181f22] text-xl md:text-2xl ibm-font text-center interactive-text">
+                  {link.subtext}
+                </p>
+              </ClickWrapper>
+            ))}
           </div>
         </div>
       )}
