@@ -24,7 +24,7 @@ const mobileImages = [
   { src: '/mobile/mb3-4.webp',     delay: 1.9, isStatic: false, zIndex: 13, href: 'https://wa.link/uhhv7i' },
   { src: '/mobile/mb1-2.webp',     delay: 2.1, isStatic: false, zIndex: 12, scrollTo: '#portfolio' },
   { src: '/mobile/mbme.webp',      delay: 2.2, isStatic: false, zIndex: 11, href: 'https://www.instagram.com/aamir.naqvii/' },
-  { src: '/mobile/mobile_bg.webp', isStatic: true,              zIndex: 10, scrollTo: '#portfolio' },
+  { src: '/mobile/mbme.webp',      isStatic: true,              zIndex: 10, scrollTo: '#portfolio' },
 ];
 
 const desktopImages = [
@@ -97,12 +97,8 @@ const contactLinks = [
 function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [showContact, setShowContact] = useState(false);
-  const [showArrow, setShowArrow] = useState(true);
   const heroRef = useRef<HTMLDivElement>(null);
   const portfolioSectionRef = useRef<HTMLDivElement>(null);
-  const mobileImagesRef = useRef<(HTMLDivElement | null)[]>([]);
-  const desktopImagesRef = useRef<(HTMLDivElement | null)[]>([]);
-  const arrowRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMobileVH();
@@ -142,16 +138,6 @@ function App() {
       scrollTrigger: { trigger: portfolioSectionRef.current, start: "top bottom", end: "bottom top", scrub: 2 }
     });
 
-    if (arrowRef.current) {
-      gsap.to(arrowRef.current, {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: portfolioSectionRef.current, start: "top bottom", end: "top center", scrub: 0,
-          onEnter: () => setShowArrow(false), onLeaveBack: () => setShowArrow(true),
-        }
-      });
-    }
-
     ScrollTrigger.create({
       trigger: portfolioSectionRef.current, start: "center bottom", fastScrollEnd: true,
       onEnter: () => setShowContact(true), onLeaveBack: () => setShowContact(false),
@@ -161,10 +147,6 @@ function App() {
   }, []);
 
   const vh = (n: number) => window.innerWidth < 768 ? `calc(var(--mobile-vh) * ${n})` : `${n}vh`;
-
-  const scrollToPortfolio = () => {
-    portfolioSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <div className="relative">
@@ -257,30 +239,6 @@ function App() {
         </div>
       </div>
 
-      {/* Scroll Arrow */}
-      {showArrow && (
-        <ClickWrapper
-          className="fixed left-1/2 -translate-x-1/2 z-[90] bounce-arrow scroll-arrow-clickable"
-          onClick={scrollToPortfolio}
-          style={{ bottom: isMobile() ? '8vh' : '5vh' }}
-        >
-          <div
-            className="flex items-center justify-center"
-            style={{
-              width: 72, height: 72,
-              background: 'rgba(201,168,76,0.12)',
-              borderRadius: '50%',
-              border: '1px solid rgba(201,168,76,0.35)',
-              backdropFilter: 'blur(12px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.1)',
-            }}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(201,168,76,0.9)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 5v14M19 12l-7 7-7-7" />
-            </svg>
-          </div>
-        </ClickWrapper>
-      )}
 
       {/* Portfolio Panel */}
       <div

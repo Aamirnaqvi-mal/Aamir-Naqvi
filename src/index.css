@@ -409,16 +409,6 @@ video { transform: translateZ(0); }
   transform: scale(1.1);
 }
 
-/* === SCROLL ARROW INTERACTIVE === */
-.scroll-arrow-clickable {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.scroll-arrow-clickable:hover {
-  transform: translateY(-4px) scale(1.1);
-  filter: drop-shadow(0 0 15px rgba(201,168,76,0.5));
-}
-
 /* === BACKGROUND INTERACTIVE === */
 .bg-interactive {
   cursor: pointer;
