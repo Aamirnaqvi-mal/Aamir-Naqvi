@@ -10,6 +10,7 @@ interface ClickWrapperProps {
   ripple?: boolean;
   scale?: number;
   style?: React.CSSProperties;
+  noHover?: boolean;
 }
 
 export function ClickWrapper({
@@ -22,6 +23,7 @@ export function ClickWrapper({
   ripple = true,
   scale = 1.02,
   style = {},
+  noHover = false,
 }: ClickWrapperProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -64,7 +66,7 @@ export function ClickWrapper({
   return (
     <div
       ref={ref}
-      className={`click-wrapper ${className}`}
+      className={noHover ? className : `click-wrapper ${className}`}
       onClick={handleClick}
       style={{ ...style, cursor: 'pointer' }}
       data-scale={scale}

@@ -183,6 +183,7 @@ function App() {
         className="fixed inset-0 z-0 bg-interactive"
         scrollTo="#portfolio"
         glowColor="rgba(255,255,255,0.15)"
+        noHover
         style={{
           backgroundImage: `url('/pc/bg.webp')`,
           backgroundAttachment: 'fixed',
@@ -207,6 +208,7 @@ function App() {
               href={img.href}
               scrollTo={img.scrollTo}
               glowColor="rgba(201,168,76,0.3)"
+              noHover
               className="mobile-image hero-image-layer fixed overflow-hidden"
               style={{
                 ...(img.isStatic
@@ -232,7 +234,8 @@ function App() {
               href={img.href}
               scrollTo={img.scrollTo}
               glowColor="rgba(201,168,76,0.3)"
-              className={`desktop-image hero-image-layer fixed overflow-hidden ${img.noHover ? '' : ''}`}
+              noHover
+              className="desktop-image hero-image-layer fixed overflow-hidden"
               style={{
                 ...((img as any).isSmall
                   ? {
