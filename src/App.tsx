@@ -297,23 +297,18 @@ function App() {
 
           {/* Header */}
           <div className="text-center mb-20">
-            <ClickWrapper
-            
-              glowColor="rgba(201,168,76,0.4)"
-            >
+        
               <h2 className="syne text-black/90 mb-5 leading-none interactive-heading"
                   style={{ fontSize: 'clamp(3rem, 8vw, 7rem)', letterSpacing: '0.04em' }}>
                 PORTFOLIO
               </h2>
-            </ClickWrapper>
-            <ClickWrapper
           
-              glowColor="rgba(201,168,76,0.3)"
-            >
+          
+         
               <p className="ibm-font text-black/55 max-w-2xl mx-auto text-base md:text-lg leading-relaxed interactive-text">
                 Visual stories crafted to move people — from scroll-stopping reels to brand-defining films.
               </p>
-            </ClickWrapper>
+         
 
             {/* Skill tags */}
             <div className="flex flex-wrap justify-center gap-2 mt-6">
