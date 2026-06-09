@@ -28,12 +28,12 @@ const mobileImages = [
 ];
 
 const desktopImages = [
-  { src: '/pc/me.webp',    delay: 2.2, isStatic: true,  noHover: false, href: 'https://www.instagram.com/aamir.naqvii/' },
-  { src: '/pc/me 2.webp',  delay: 2.4, isStatic: true,  noHover: false, href: 'https://www.instagram.com/aamir.naqvii/' },
+  { src: '/pc/me.webp',    delay: 2.2, isStatic: true,  noHover: false,},
+  { src: '/pc/me 2.webp',  delay: 2.4, isStatic: true,  noHover: false, },
   { src: '/pc/5-6.webp',   delay: 3.2, noHover: false, scrollTo: '#portfolio' },
   { src: '/pc/3-4.webp',   delay: 2.9, noHover: false, scrollTo: '#portfolio' },
   { src: '/pc/1-2.webp',   delay: 2.0, isStatic: true,  noHover: false, scrollTo: '#portfolio' },
-  { src: '/pc/7.webp',     delay: 2.2, isStatic: true,  noHover: false, href: 'https://wa.link/uhhv7i' },
+  { src: '/pc/7.webp',     delay: 2.2, isStatic: true,  noHover: false, },
   { src: '/pc/name.webp',  delay: 2.7, isSmall: true, refresh: true },
 ];
 
