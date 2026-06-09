@@ -432,11 +432,7 @@ function App() {
           </div>
 
           {/* Bottom disclaimer */}
-          <ClickWrapper
-            href="https://www.instagram.com/aamir.naqvii/"
-            glowColor="rgba(201,168,76,0.2)"
-            className="interactive-disclaimer"
-          >
+         
             <p className="text-center ibm-font text-xs mt-12 pb-4" style={{ color: 'var(--warm-gray)' }}>
               All content is original work. Brands and clients belong to their respective owners.
             </p>
