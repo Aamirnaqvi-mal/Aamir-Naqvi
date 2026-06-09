@@ -432,13 +432,13 @@ function App() {
           </div>
 
           {/* Bottom disclaimer */}
-         
-            <p className="text-center ibm-font text-xs mt-12 pb-4" 
+     
+            <p className="text-center ibm-font text-xs mt-12 pb-4" style={{ color: 'var(--warm-gray)' }}>
               All content is original work. Brands and clients belong to their respective owners.
             </p>
- 
+     
         </div>
-      
+  
 
        {/* Contact Section */}
       {showContact && (
