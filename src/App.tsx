@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import VideoThumbnail from "./components/VideoThumbnail";
 import { ClickWrapper } from "./components/ClickWrapper";
-import { Mail, Instagram } from 'lucide-react';
+import { Mail, Instagram, ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplashScreen } from './components/SplashScreen';
@@ -236,6 +236,18 @@ function App() {
               <img src={img.src} alt="" className={(img as any).isSmall ? 'w-full h-auto' : 'w-full h-full object-cover'} />
             </ClickWrapper>
           ))}
+        </div>
+
+        {/* Scroll indicator arrow */}
+        <div
+          className="bounce-arrow absolute bottom-8 left-1/2 -translate-x-1/2 z-[60] flex flex-col items-center gap-2"
+          onClick={() => {
+            const el = document.querySelector('#portfolio');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
+          <span className="text-white/50 text-xs uppercase tracking-[0.2em] font-light">Scroll</span>
+          <ChevronDown className="w-6 h-6 text-white/60" strokeWidth={1.5} />
         </div>
       </div>
 

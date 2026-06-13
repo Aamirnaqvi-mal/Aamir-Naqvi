@@ -149,10 +149,25 @@ video { transform: translateZ(0); -webkit-transform: translateZ(0); }
 
 /* === BOUNCING ARROW === */
 @keyframes bounce-arrow {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-14px); }
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50%       { transform: translateY(-14px); opacity: 1; }
 }
-.bounce-arrow { animation: bounce-arrow 2.2s ease-in-out infinite; }
+.bounce-arrow {
+  animation: bounce-arrow 2.2s ease-in-out infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.bounce-arrow:hover {
+  animation: bounce-arrow 0.8s ease-in-out infinite;
+  opacity: 1;
+}
+.bounce-arrow:hover svg {
+  filter: drop-shadow(0 0 12px rgba(201,168,76,0.6));
+  transform: scale(1.15);
+}
+.bounce-arrow svg {
+  transition: all 0.3s ease;
+}
 
 /* === DESKTOP IMAGE === */
 .desktop-image {
@@ -428,8 +443,7 @@ video { transform: translateZ(0); }
   cursor: pointer;
 }
 .name-hover:hover {
-  transform: scale(5.015) translateZ(0);
- 
+  transform: scale(1.08);
 }
 
 /* === MOBILE IMAGE === */
