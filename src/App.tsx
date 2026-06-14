@@ -249,7 +249,7 @@ function App() {
           <div className="scroll-circle-btn">
         <ChevronDown className="w-5 h-5 text-[#8A1212]" strokeWidth={2} />
           </div>
-          <span className="text-[#181F21] text-[10px] uppercase tracking-[0.25em] font-bold ibm-font drop-shadow-[0_0_10px_rgba(233,227,215,1)]">
+         <span className="text-[#181F21] text-[10px] uppercase tracking-[0.25em] font-bold ibm-font drop-shadow-[0_2px_6px_rgba(233,227,215,0.9)]">
   Scroll Down
 </span>
         </div>
