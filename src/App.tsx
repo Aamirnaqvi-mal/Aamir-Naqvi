@@ -246,8 +246,10 @@ function App() {
             if (el) el.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          <span className="text-white/50 text-xs uppercase tracking-[0.2em] font-light">Scroll</span>
-          <ChevronDown className="w-6 h-6 text-white/60" strokeWidth={1.5} />
+          <div className="scroll-circle-btn">
+            <ChevronDown className="w-5 h-5 text-white/70" strokeWidth={1.5} />
+          </div>
+          <span className="text-white/50 text-[10px] uppercase tracking-[0.25em] font-light ibm-font">Scroll Down</span>
         </div>
       </div>
 
