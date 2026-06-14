@@ -179,7 +179,7 @@ box-shadow: 0 0 50px 20px rgba(233, 227, 215, 1);
   box-shadow: 0 0 50px 20px rgba(233, 227, 215, 1);
 }
 .bounce-arrow:hover svg {
-  color: solid #8A1212; !important;
+  color: solid #8A1212; important;
 }
 
 /* === DESKTOP IMAGE === */
