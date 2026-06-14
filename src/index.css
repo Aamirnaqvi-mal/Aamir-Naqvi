@@ -168,7 +168,7 @@ video { transform: translateZ(0); -webkit-transform: translateZ(0); }
   border-radius: 50%;
   border: 2px solid #8A1212;
   background-color: #E9E3D7;
-box-shadow: 0 0 30px 10px rgba(233, 227, 215, 1);
+box-shadow: 0 0 50px 10px rgba(233, 227, 215, 1);
   display: flex;
   align-items: center;
   justify-content: center;
