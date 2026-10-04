@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Aamir Naqvi</title>
+
+    <!-- Preconnect to font + CDN origins for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Prioritize only the hero assets visible at first paint. -->
+    <link rel="preload" as="image" href="/pc/bg.webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/pc/me.webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/mobile/mbbg.webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/mobile/mbme.webp" media="(max-width: 767px)" fetchpriority="high">
+
+    <!-- Critical CSS inline -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html, body, #root {
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #f5f2ec;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+
+    <!-- Load fonts asynchronously to prevent render blocking — single combined request -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Anton&family=Bebas+Neue&family=IBM+Plex+Sans:ital,wdth@0,75;1,75&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Anton&family=Bebas+Neue&family=IBM+Plex+Sans:ital,wdth@0,75;1,75&display=swap" rel="stylesheet">
+    </noscript>
+
+    <script type="module" crossorigin src="/assets/index-BVwFuMpl.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-BVBiHVO-.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-dom-CiZkWlqw.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-D1k7P97i.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-C_5ZDPtS.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Aamir Naqvi</title>
+
+    <!-- Preconnect to all external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Prioritize only the hero assets visible at first paint. -->
+    <link rel="preload" as="image" href="/pc/bg.webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/pc/me.webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/pc/me 2.webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/mobile/mbbg.webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/mobile/mbme.webp" media="(max-width: 767px)" fetchpriority="high">
+
+    <!-- Critical CSS inline — enough to render the hero background + layout
+         without waiting for the external stylesheet to download. -->
+    <style>
+      *{margin:0;padding:0;box-sizing:border-box}
+      html,body,#root{width:100%;height:100%;overflow-x:hidden}
+      html{overflow-y:auto;scroll-behavior:smooth;height:auto}
+      body{font-family:system-ui,-apple-system,sans-serif;background:#f5f2ec;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+      @media(max-width:767px){html{scroll-behavior:auto}}
+      .syne{font-family:'Bebas Neue','Bebas Neue Regular',sans-serif;letter-spacing:.04em}
+      .ibm-font{font-family:'IBM Plex Sans',sans-serif}
+      .hero-enter{opacity:0;transform:translateY(20px)}
+      .hero-ready .hero-enter{animation:hero-fade-in .8s cubic-bezier(.22,.61,.36,1) forwards}
+      .hero-ready .hero-enter:nth-child(1){animation-delay:.1s}
+      .hero-ready .hero-enter:nth-child(2){animation-delay:.25s}
+      .hero-ready .hero-enter:nth-child(3){animation-delay:.4s}
+      .hero-ready .hero-enter:nth-child(4){animation-delay:.55s}
+      .hero-ready .hero-enter:nth-child(5){animation-delay:.7s}
+      @keyframes hero-fade-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+      @keyframes slideUp{from{transform:translateY(100vh)}to{transform:translateY(0)}}
+      .hero-image-layer{animation-fill-mode:forwards}
+      .hero-design{pointer-events:none;-webkit-user-select:none;user-select:none;overflow:hidden}
+      .hero-design .design,.hero-design .page{margin:0;padding:0}
+      .hero-design img{image-rendering:-webkit-optimize-contrast}
+      .desktop-image{cursor:pointer}
+      .desktop-image img{will-change:transform}
+      .mobile-image{cursor:pointer}
+      .bg-interactive{cursor:pointer}
+      /* Portfolio panel + scroll indicator — prevents layout shift when
+         the async stylesheet arrives and the portfolio section is reached. */
+      .portfolio-panel{background:#f5f2ec;border-radius:2.5rem;position:relative}
+      .video-card{border-radius:1.25rem;overflow:hidden;position:relative;background:#1a1a1a}
+      .scroll-indicator{border:none;background:transparent;cursor:pointer;padding:0;opacity:.9}
+      .scroll-indicator-label{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#f5f2ec;font-weight:600}
+      .scroll-indicator-track{display:block;width:34px;height:62px;border:2px solid rgba(245,242,236,.45);border-radius:18px;position:relative;overflow:hidden}
+      .scroll-indicator-dot{display:block;position:absolute;top:8px;left:50%;width:5px;height:12px;margin-left:-2.5px;border-radius:3px;background:#f5f2ec}
+      .click-wrapper{position:relative;overflow:hidden}
+      .tag-pill{display:inline-flex;align-items:center;font-size:.7rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .6rem;border-radius:100px;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.08)}
+      @media(prefers-reduced-motion:reduce){.hero-enter{opacity:1;transform:none;animation:none}}
+    </style>
+
+    <!-- Critical fonts first (Bebas Neue = hero name, IBM Plex Sans = body) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:ital,wdth@0,75&display=swap" media="print" onload="this.media='all'">
+    <!-- Non-critical fonts deferred (Akshar = testimonial labels, Anton = fallback) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Akshar:wght@300..700&family=Anton&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:ital,wdth@0,75&family=Akshar:wght@300..700&family=Anton&display=swap" rel="stylesheet">
+    </noscript>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx" fetchpriority="high"></script>
+  </body>
+</html>
